@@ -1,6 +1,6 @@
 CREATE DATABASE PROJECTPORTFOLIO
 
-/* CREATING TABLE OF COVID DEATHS WHICH IS IMPORTED FROM CSV FILE*/
+/* CREATING TABLE OF COVID DEATHS WHICH IS IMPORTED FROM CSV FILE */
 
 CREATE TABLE COVID_DEATHSS
 (   iso_code varchar(255),
@@ -31,7 +31,7 @@ CREATE TABLE COVID_DEATHSS
     weekly_hosp_admissions_per_million float )
     select new_deaths_per_million from covid_deaths
     
-    /* CONVERTING DATE WHICH WAS TEXT INTO DATE TYPE*/
+    /* CONVERTING DATE INTO DATE DATATYPE SINCE WHEN WE IMPORT DATA FROM EXCEL THE DATES ARE NOT IN RIGHT FORMAT AS PER SQL*/
     ALTER TABLE COVID_DEATHSs
     ADD COLUMN DATE DATE AFTER DATES;
     
@@ -224,7 +224,7 @@ order by sum(new_vaccinations)desc) AS TEMPTABLE
                                                 
                                                    /* USER DEFINED VARIABLES */
 					
-/*FIND THE DATES ON WHICH TOP 10 PERCENT OF VACCINES WERE ADMINISTERED */
+/*FIND THE DATES ON WHICH TOP 5 PERCENT OF VACCINES WERE ADMINISTERED */
 set @rank:=0
 set @totalrows:=  ceil(DATEDIFF('2021-10-23','2021-01-26')*'0.05')
 select* from 
